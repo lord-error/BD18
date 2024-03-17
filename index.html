@@ -81,6 +81,26 @@
         padding: 2%;
     }
 
+    /* Стили для всплывающего окошка */
+    .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #d1d1d1;
+        padding: 2%;
+        border: 3px solid #adadad;
+        font-size: 36px;
+        font-style: italic;
+        text-align: left;
+        z-index: 9999; /* чтобы окошко было поверх всего */
+    }
+    /* Стили для ссылки */
+    .popup-link {
+        cursor: pointer;
+    }
+        
 </style>
 <title>С днём рождения, бабушка!</title>
 </head>
@@ -210,8 +230,23 @@
                 </video>
             </div>
         </div>
-        <div class="filler"></div>
-        <div class="comment">А те, кто скажут, что тут много опечаток, пусть сами поробую напичетать такой объём текста без автозамены, не забывая попути програмировать сайт, продумывать дизайн, писать текста и обрабатывать поступающие из различных источников медиа файлы, в условии, когла сроки поджимают капитально</div>
+        <div class="comment"><p onclick="showPopup()" align="center">Нажмите, если считаете, что на сайте неоправдано много опечаток</p></div>
+
+<!-- Всплывающее окно -->
+        <div id="popup" class="popup" onclick="hidePopup()">
+            А те, кто скажут, что тут много опечаток, пусть сами поробую напичетать такой объём текста без автозамены, не забывая попути програмировать сайт, продумывать дизайн, писать текста и обрабатывать поступающие из различных источников медиа файлы, в условии, когла сроки поджимают капитально. (Нажмите, чтобы закрыть)
+        </div>
+
+        <script>
+            function showPopup() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "block";
+            }
+            function hidePopup() {
+                var popup = document.getElementById("popup");
+                popup.style.display = "none";
+            }
+        </script>
         <div class="filler"></div>
         <div class="filler"></div>
         <div class="filler"></div>
